@@ -1,0 +1,96 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+</head>
+<body>
+    <input type="password" id="password" placeholder="Enter Password" style="padding: 10px; font-size: medium;">
+    <button onclick="validatePassword()" style="padding: 10px; font-size: medium; border-radius: 5px;">Submit</button>
+
+    <script>
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+
+            const letters = (password.match(/[a-zA-Z]/g) || []).length;
+            const symbols = (password.match(/[^a-zA-Z0-9]/g) || []).length;
+            const digits = (password.match(/[0-9]/g) || []).length;
+
+            const isValid = letters >= 5 && symbols >= 1 && digits >= 3;
+
+            const passwordInput = document.getElementById('password');
+
+            if (isValid) {
+                console.log("The password is valid.");
+                passwordInput.style.backgroundColor = 'red'; 
+            } else {
+                console.log("The password is invalid.");
+                passwordInput.style.backgroundColor = 'green'; 
+            }
+        }
+    </script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation: Input From User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+    </style>
+</head>
+<body>
+    <input type="text" id="password" placeholder="Enter Password" style="padding: 10px; font-size: medium;">
+    <button onclick="validatePassword()" style="padding: 10px; font-size: medium; border-radius: 5px;">SUBMIT</button>
+    
+    
+    <script>
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            let letters = 0;
+            let symbols = 0;
+            let digits = 0;
+
+            for (let i = 0; i < password.length; i++) {
+                const char = password[i];
+                if ((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z')) 
+                {
+                    letters++;
+                } 
+                else if (char >= '0' && char <= '9')
+                {
+                    digits++;
+                } 
+                else 
+                {
+                    symbols++;
+                }
+            }
+
+            const isValid = letters >= 5 && symbols >= 1 && digits >= 3;
+
+            const passwordInput = document.getElementById('password');
+
+            if (isValid) {
+                console.log("The password is valid.");
+                passwordInput.style.backgroundColor = 'green'; 
+            } else {
+                console.log("The password is invalid.");
+                passwordInput.style.backgroundColor = 'red'; 
+            }
+        }
+    </script>
+
+</body>
+</html>
+

@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let pass = 'revatii@123';
+
+    const ValidPass = password => {
+        const letters = (password.match(/[a-zA-Z]/g) || []).length;
+        const symbols = (password.match(/[^a-zA-Z0-9]/g) || []).length;
+        const digits = (password.match(/[0-9]/g) || []).length;
+        return letters >= 5 && symbols >= 1 && digits >= 3;
+    };
+    
+    if (ValidPass(pass)) {
+        console.log("The password is valid.");
+    } else {
+        console.log("The password is invalid.");
+    }
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation: Defined Password</title>
+</head>
+<body>
+    <script>
+    let pass = 'revati@12';
+
+    const ValidPass = password => {
+        let letters = 0;
+        let symbols = 0;
+        let digits = 0;
+
+        for (let i = 0; i < password.length; i++) {
+            const char = password[i];
+            if (char >= 'a' && char <= 'z' || char >= 'A' && char <= 'Z') {
+                letters++;
+            } else if (char >= '0' && char <= '9') {
+                digits++;
+            } else {
+                symbols++;
+            }
+        }
+
+        return letters >= 5 && symbols >= 1 && digits >= 3;
+    };
+    
+    if (ValidPass(pass)) {
+        console.log("The password is valid.");
+    } else {
+        console.log("The password is invalid.");
+    }
+    </script>
+</body>
+</html>
+
